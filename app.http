@@ -1,0 +1,61 @@
+# Get all todos (API-1)
+GET http://localhost:3000/todos/
+
+# Get todos with a specific status (API-1)
+GET http://localhost:3000/todos/?status=TO%20DO
+
+# Get todos with a specific priority (API-1)
+GET http://localhost:3000/todos/?priority=HIGH
+
+# Get todos with both priority and status (API-1)
+GET http://localhost:3000/todos/?priority=HIGH&status=DONE
+
+# Get todos containing a specific search term (API-1)
+GET http://localhost:3000/todos/?search_q=meeting
+
+# Get todos with a specific category (API-1)
+GET http://localhost:3000/todos/?category=WORK
+
+# Get todos with both category and status (API-1)
+GET http://localhost:3000/todos/?category=HOME&status=IN%20PROGRESS
+
+# Get todos with both category and priority (API-1)
+GET http://localhost:3000/todos/?category=LEARNING&priority=MEDIUM
+
+# Get a single todo by ID (API-2)
+GET http://localhost:3000/todos/1
+
+# Get todos due on a specific date (API-3)
+GET http://localhost:3000/agenda/?date=2024-12-31
+
+# Add a new todo (API-4)
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 5,
+  "todo": "Prepare presentation",
+  "priority": "HIGH",
+  "status": "TO DO",
+  "category": "WORK",
+  "dueDate": "2024-12-31"
+}
+
+# Update a todo's priority (API-5)
+PUT http://localhost:3000/todos/1
+Content-Type: application/json
+
+{
+  "priority": "MEDIUM"
+}
+
+# Update a todo's status (API-5)
+PUT http://localhost:3000/todos/1
+Content-Type: application/json
+
+{
+  "status": "DONE"
+}
+
+# Delete a todo (API-6)
+DELETE http://localhost:3000/todos/1
